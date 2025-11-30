@@ -3,6 +3,9 @@ const grid = document.getElementById('grid-container');
 
 //function to create grid layout
 function createGridLayout(size) {
+
+    grid.style.width = `${size * 40}px`; // set grid width
+    grid.style.height = `${size * 40}px`; // set grid height
     // for loop to create grid
     for (let i = 0; i < size * size; i++) {
         const cell = document.createElement('div'); // create a div for each cell

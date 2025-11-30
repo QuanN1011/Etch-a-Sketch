@@ -1,17 +1,22 @@
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    overflow: auto;
+    background-color: burlywood;
 }
 #grid-container{
     display: flex;
     border: 2px solid black;
     flex-wrap: wrap;
-    width: 640px;
-    height: 640px;
+    /* remove fixed width and height to allow dynamic sizing */
+    /* width: 640px;
+    height: 640px; */
 }
 
 .grid-cell{
@@ -25,4 +30,15 @@ body{
 .grid-cell:hover{
     background-color: blueviolet;
     cursor: pointer;
+}
+
+#grid-size-button{
+    border-radius : 5px;
+    background-color: tomato;
+    padding: 5px 10px;
+}
+#grid-size-button:hover{
+    background-color: orangered;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px gray;
 }
