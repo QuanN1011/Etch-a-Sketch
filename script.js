@@ -29,12 +29,16 @@ function createGridLayout(size) {
 const defaultSize = 16;
 createGridLayout(defaultSize);
 
+const buttonContainer = document.createElement('div');
+buttonContainer.id = 'button-container';
+document.body.insertBefore(buttonContainer, grid); 
+
 // Add button to change grid size
 
 const button = document.createElement('button');
 button.textContent = 'Grid Size';
 button.id = 'grid-size-button';
-document.body.insertBefore(button, grid);
+buttonContainer.appendChild(button);
 
 button.addEventListener('click', () => {
     let newSize = prompt("Enter new grid size (max 100):");
@@ -48,6 +52,19 @@ button.addEventListener('click', () => {
     } else {
         alert("Invalid size! Please enter a number between 1 and 100.");
     }
+});
+
+// Add button to reset grid colors
+const resetButton = document.createElement('button');
+resetButton.textContent = 'Reset';
+resetButton.id = 'reset-grid-button';
+buttonContainer.appendChild(resetButton);
+
+resetButton.addEventListener('click', () => {
+    const cells = document.querySelectorAll('.grid-cell');
+    cells.forEach(cell => {
+        cell.style.backgroundColor = '';
+    })
 });
 
 function getRandomColor() {
